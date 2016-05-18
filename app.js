@@ -1,9 +1,11 @@
 var express = require('express');
 var config = require('./config/config.js');
 var path = require('path');
+var bodyParser = require('body-parser');
 
 var app = express();
-// app.use(express.static(__dirname + 'views'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 var port = process.env.PORT || 8080;
 
 app.get('/', function(req,res) {
