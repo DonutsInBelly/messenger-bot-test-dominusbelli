@@ -18,7 +18,7 @@ var port = process.env.PORT || 8080;
 
 app.get('/', function(req,res) {
   res.sendFile(path.join(__dirname + '/views/index.html'));
-})
+});
 
 app.get('/webhook', function(req, res){
   if(req.query['hub.verify_token'] === config.verify_token) {
